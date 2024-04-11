@@ -285,11 +285,16 @@ fun Home(navigationController: NavHostController) {
                                     .height(120.dp),
                                 shape = RoundedCornerShape(8.dp)
                             ) {
-                                Image(
-                                    painter = painterResource(id = R.drawable.london),
-                                    contentDescription = "Londres",
-                                    contentScale = ContentScale.Crop
-                                )
+                                Surface (
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = R.drawable.london),
+                                        contentDescription = "Londres",
+                                        contentScale = ContentScale.Crop
+                                    )
+                                }
                             }
                             Text(
                                 text = "London, 2019",
