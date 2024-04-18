@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -46,7 +47,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.triproom.R
+import br.senai.sp.jandira.triproom.repository.TravelRepository
 import br.senai.sp.jandira.triproom.ui.theme.TripRoomTheme
+import br.senai.sp.jandira.triproom.utilities.ConvertDates
 
 @Composable
 fun Home(navigationController: NavHostController) {
@@ -54,6 +57,8 @@ fun Home(navigationController: NavHostController) {
     var searchState = remember {
         mutableStateOf("")
     }
+
+    val travels = TravelRepository().listAllTravels()
 
     Column(
         modifier = Modifier
@@ -258,7 +263,8 @@ fun Home(navigationController: NavHostController) {
             )
 
             LazyColumn() {
-                items(6) {
+
+                items(travels) {
                     Card (
                         colors = CardDefaults.cardColors(
                             containerColor = Color.White,
@@ -290,25 +296,28 @@ fun Home(navigationController: NavHostController) {
                                         .fillMaxSize()
                                 ) {
                                     Image(
-                                        painter = painterResource(id = R.drawable.london),
+                                        painter = if (it.image == null) painterResource(id = R.drawable.noimg) else it.image!!,
                                         contentDescription = "Londres",
                                         contentScale = ContentScale.Crop
                                     )
                                 }
                             }
                             Text(
-                                text = "London, 2019",
+                                text = "${it.destination}, ${it.dateArrival.year}",
                                 fontSize = 14.sp,
                                 color = Color(0xffcf06f0)
                             )
                             Text(
-                                text = "London is the capital and largest city of  the United Kingdom, with a population of just under 9 million.",
+                                text = it.description,
                                 fontSize = 10.sp,
                                 lineHeight = 12.sp,
                                 color = Color(0xffb7b7b7)
                             )
                             Text(
-                                text = "18 Feb - 21 Feb",
+                                text = ConvertDates().dateShortener(
+                                    dateArrival = it.dateArrival,
+                                    dataLeaving = it.dateLeaving
+                                ),
                                 fontSize = 12.sp,
                                 color = Color(0xffcf06f0),
                                 modifier = Modifier
