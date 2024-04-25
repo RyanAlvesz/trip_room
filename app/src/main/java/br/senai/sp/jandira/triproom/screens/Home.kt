@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.triproom.R
+import br.senai.sp.jandira.triproom.repository.CategoryRepository
 import br.senai.sp.jandira.triproom.repository.TravelRepository
 import br.senai.sp.jandira.triproom.ui.theme.TripRoomTheme
 import br.senai.sp.jandira.triproom.utilities.ConvertDates
@@ -59,6 +60,7 @@ fun Home(navigationController: NavHostController) {
     }
 
     val travels = TravelRepository().listAllTravels()
+    val categories = CategoryRepository().listAllCategories()
 
     Column(
         modifier = Modifier
@@ -159,7 +161,7 @@ fun Home(navigationController: NavHostController) {
             )
 
             LazyRow() {
-                items(6) {
+                items(categories) {
                     Card (
                         colors = CardDefaults.cardColors(
                             containerColor = Color(0xffcf06f0),
@@ -189,13 +191,13 @@ fun Home(navigationController: NavHostController) {
                                 )
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.mountain),
-                                    contentDescription = "Montanha",
+                                    painter = if (it.image == null) painterResource(id = R.drawable.noimg) else it.image!!,
+                                    contentDescription = it.nome,
                                     contentScale = ContentScale.Fit
                                 )
                             }
                             Text(
-                                text = "Mountain",
+                                text = it.nome,
                                 modifier = Modifier
                                     .padding(top = 2.dp),
                                 color = Color.White
