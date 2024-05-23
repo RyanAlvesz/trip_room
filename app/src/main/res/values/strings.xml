@@ -1,3 +1,41 @@
 <resources>
+
     <string name="app_name">TripRoom</string>
+
+    <!-- Login -->
+
+    <string name="login">Login</string>
+    <string name="login_message">Please sign in to continue.</string>
+    <string name="email_message">E-mail</string>
+    <string name="password_message">Password</string>
+    <string name="locker_icon">Locker</string>
+    <string name="forward_arrow_icon">Forward Arrow</string>
+    <string name="account_message">Don\'t you have an account?</string>
+    <string name="error_login_message">Invalid user or password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+
+    <!--  Sign Up  -->
+
+    <string name="create_new_account">Create a new account</string>
+    <string name="username_message">Username</string>
+    <string name="pearson_icon">Person</string>
+    <string name="camera_icon">Camera</string>
+    <string name="phone_message">Phone</string>
+    <string name="over_18">Over 18?</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account">Already have an account?</string>
+
+    <!-- Home -->
+
+    <string name="you_are_in"> You\`re in </string>
+    <string name="my_trips"> My Trips </string>
+    <string name="categories"> Categories </string>
+    <string name="search_destiny"> Search your destiny </string>
+    <string name="past_trips"> Past Trips </string>
+    <string name="add_button"> Add Button </string>
+    <string name="profile_picture_description"> Profile Picture </string>
+    <string name="location_icon"> Location </string>
+    <string name="search_icon"> Search </string>
+
 </resources>

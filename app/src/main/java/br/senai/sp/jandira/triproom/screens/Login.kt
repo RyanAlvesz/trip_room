@@ -30,11 +30,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.triproom.R
 
 @Composable
 fun Login(navigationController: NavHostController) {
@@ -54,6 +57,8 @@ fun Login(navigationController: NavHostController) {
     var msgErroState = remember {
         mutableStateOf("")
     }
+
+    var errorMessage = stringResource(id = R.string.error_login_message)
 
     Column(
         modifier = Modifier
@@ -93,13 +98,13 @@ fun Login(navigationController: NavHostController) {
                     .padding(horizontal = 16.dp)
             ) {
                 Text(
-                    text = "Login",
+                    text = stringResource(id = R.string.login),
                     fontSize = 52.sp,
                     fontWeight = FontWeight.ExtraBold,
                     color = Color(0xffcf06f0)
                 )
                 Text(
-                    text = "Please sign in to continue",
+                    text = stringResource(id = R.string.login_message),
                     color = Color(0xffa09c9c),
                     fontSize = 18.sp
                 )
@@ -120,14 +125,14 @@ fun Login(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Email,
-                            contentDescription = "Email",
+                            contentDescription = stringResource(id = R.string.email_message),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "E-mail")
+                        Text(text = stringResource(id = R.string.email_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -147,14 +152,14 @@ fun Login(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
-                            contentDescription = "Cadeado",
+                            contentDescription = stringResource(id = R.string.locker_icon),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "Password")
+                        Text(text = stringResource(id = R.string.password_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -185,7 +190,7 @@ fun Login(navigationController: NavHostController) {
                               msgErroState.value = ""
                               navigationController.navigate("home")
                           } else {
-                              msgErroState.value = "Usuário ou senha incorretos!"
+                              msgErroState.value = errorMessage
                           }
                     },
                     colors = ButtonDefaults.buttonColors(
@@ -199,7 +204,7 @@ fun Login(navigationController: NavHostController) {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "SIGN IN",
+                            text = stringResource(id = R.string.sign_in).uppercase(),
                             modifier = Modifier
                                 .padding(end = 8.dp),
                             fontWeight = FontWeight.Bold,
@@ -207,19 +212,19 @@ fun Login(navigationController: NavHostController) {
                         )
                         Icon(
                             imageVector = Icons.Filled.ArrowForward,
-                            contentDescription = "Seta para frente",
+                            contentDescription = stringResource(id = R.string.forward_arrow_icon),
                             tint = MaterialTheme.colorScheme.background
                         )
                     }
                 }
                 Row {
                     Text(
-                        text = "Don't have an account?",
+                        text = stringResource(id = R.string.account_message),
                         color = Color(0xffa09c9c),
                         fontSize = 14.sp
                     )
                     Text(
-                        text = "Sign up",
+                        text = stringResource(id = R.string.sign_up),
                         modifier = Modifier
                             .padding(horizontal = 4.dp)
                             .clickable { navigationController.navigate("signup") },

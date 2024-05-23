@@ -40,11 +40,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.triproom.R
 import br.senai.sp.jandira.triproom.ui.theme.TripRoomTheme
 
 @Composable
@@ -105,13 +107,13 @@ fun SignUp(navigationController: NavHostController) {
                     .padding(bottom = 24.dp)
             ) {
                 Text(
-                    text = "Sign Up",
+                    text = stringResource(id = R.string.sign_up),
                     fontSize = 38.sp,
                     fontWeight = FontWeight.ExtraBold,
                     color = Color(0xffcf06f0)
                 )
                 Text(
-                    text = "Create a new account",
+                    text = stringResource(id = R.string.create_new_account),
                     color = Color(0xffa09c9c),
                     fontSize = 18.sp,
                     modifier = Modifier
@@ -148,7 +150,7 @@ fun SignUp(navigationController: NavHostController) {
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Person,
-                                contentDescription = "Pessoa",
+                                contentDescription = stringResource(id = R.string.pearson_icon),
                                 tint = Color(0xffcf06f0),
                                 modifier = Modifier
                                     .size(85.dp)
@@ -165,7 +167,7 @@ fun SignUp(navigationController: NavHostController) {
                     ) {
                         Icon(
                             imageVector = Icons.Default.AddAPhoto,
-                            contentDescription = "Camera",
+                            contentDescription = stringResource(id = R.string.camera_icon),
                             tint = Color(0xffCB26A7)
                         )
                     }
@@ -185,14 +187,14 @@ fun SignUp(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Person,
-                            contentDescription = "Pessoa",
+                            contentDescription = stringResource(id = R.string.pearson_icon),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "Username")
+                        Text(text = stringResource(id = R.string.username_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -213,14 +215,14 @@ fun SignUp(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Smartphone,
-                            contentDescription = "Phone",
+                            contentDescription = stringResource(id = R.string.phone_message),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "Phone")
+                        Text(text = stringResource(id = R.string.phone_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -241,14 +243,14 @@ fun SignUp(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Email,
-                            contentDescription = "Email",
+                            contentDescription = stringResource(id = R.string.email_message),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "E-mail")
+                        Text(text = stringResource(id = R.string.email_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -269,14 +271,14 @@ fun SignUp(navigationController: NavHostController) {
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
-                            contentDescription = "Cadeado",
+                            contentDescription = stringResource(id = R.string.locker_icon),
                             tint = Color(0xffcf06f0),
                             modifier = Modifier
                                 .size(30.dp)
                         )
                     },
                     label = {
-                        Text(text = "Password")
+                        Text(text = stringResource(id = R.string.password_message))
                     },
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -304,7 +306,7 @@ fun SignUp(navigationController: NavHostController) {
                             ),
                     )
                     Text(
-                        text = "Over 18?"
+                        text = stringResource(id = R.string.over_18)
                     )
                 }
 
@@ -320,7 +322,7 @@ fun SignUp(navigationController: NavHostController) {
                     shape = RoundedCornerShape(12.dp)
                 ) {
                     Text(
-                        text = "CREATE ACCOUNT",
+                        text = stringResource(id = R.string.create_account).uppercase(),
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -333,12 +335,12 @@ fun SignUp(navigationController: NavHostController) {
                         .fillMaxWidth()
                 ) {
                     Text(
-                        text = "Already have an account?",
+                        text = stringResource(id = R.string.already_have_account),
                         color = Color(0xffa09c9c),
                         fontSize = 14.sp
                     )
                     Text(
-                        text = "Login",
+                        text = stringResource(id = R.string.login),
                         modifier = Modifier
                             .padding(horizontal = 4.dp)
                             .clickable { navigationController.navigate("login") },

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string name="app_name">TripRoom</string>
+
+        <!-- Login -->
+
+        <string name="login">Entrar</string>
+        <string name="login_message">Por favor,faça login para continuar.</string>
+        <string name="email_message">E-mail</string>
+        <string name="password_message">Senha</string>
+        <string name="locker_icon">Cadeado</string>
+        <string name="forward_arrow_icon">Seta para frente</string>
+        <string name="account_message">Não tem uma conta?</string>
+        <string name="error_login_message">E-mail ou senha inválidos</string>
+        <string name="sign_up">Cadastre-se</string>
+        <string name="sign_in">Entrar</string>
+
+        <!--  Sign Up  -->
+
+        <string name="create_new_account">Criar uma nova conta</string>
+        <string name="username_message">Usuário</string>
+        <string name="pearson_icon">Pessoa</string>
+        <string name="camera_icon">Câmera</string>
+        <string name="phone_message">Celular</string>
+        <string name="over_18">Maior de 18?</string>
+        <string name="create_account">Criar conta</string>
+        <string name="already_have_account">Já possui uma conta?</string>
+
+        <!-- Home -->
+
+        <string name="you_are_in"> Você está em </string>
+        <string name="my_trips"> Minhas viagens </string>
+        <string name="categories"> Categorias </string>
+        <string name="search_destiny"> Procure seu destino </string>
+        <string name="past_trips"> Viagens anteriores </string>
+        <string name="add_button"> Botão adicionar </string>
+        <string name="profile_picture_description"> Foto de Perfil </string>
+        <string name="location_icon"> Localização </string>
+        <string name="search_icon"> Pesquisar </string>
+
+</resources>
